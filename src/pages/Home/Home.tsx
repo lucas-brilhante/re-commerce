@@ -23,8 +23,8 @@ export const Home = () => {
       {data?.map((item) => {
         const path = generatePath(routes.item, { itemId: item.id });
         return (
-          <Link to={path}>
-            <ItemCard key={item.id} item={item} />;
+          <Link to={path} key={item.id}>
+            <ItemCard item={item} />;
           </Link>
         );
       })}

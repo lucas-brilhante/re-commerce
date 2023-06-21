@@ -4,6 +4,9 @@ import { Content } from "./components/Content";
 import { Header } from "./components/Header";
 import { routes } from "./routes";
 import { Home } from "./pages/Home";
+import { Items } from "./pages/Items";
+import { ErrorAlert } from "./components/ErrorAlert";
+import { MaxWidthLimiter } from "./components/MaxWidthLimiter";
 import "./index.css";
 
 function App() {
@@ -11,12 +14,18 @@ function App() {
     <Layout style={{ minHeight: "100vh" }}>
       <Header />
       <Content>
-        <BrowserRouter>
-          <Routes>
-            <Route path={routes.home} element={<Home />} />
-            <Route path={routes.teste} element={<span>teste</span>} />
-          </Routes>
-        </BrowserRouter>
+        <MaxWidthLimiter>
+          <BrowserRouter>
+            <Routes>
+              <Route path={routes.home} element={<Home />} />
+              <Route path={routes.item} element={<Items />} />
+              <Route
+                path="*"
+                element={<ErrorAlert description="Page not found!" />}
+              />
+            </Routes>
+          </BrowserRouter>
+        </MaxWidthLimiter>
       </Content>
     </Layout>
   );
