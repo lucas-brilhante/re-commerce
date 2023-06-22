@@ -8,26 +8,32 @@ import { Items } from "./pages/Items";
 import { ErrorAlert } from "./components/ErrorAlert";
 import { MaxWidthLimiter } from "./components/MaxWidthLimiter";
 import "./index.css";
+import { Cart } from "./pages/Cart";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <Layout style={{ minHeight: "100vh" }}>
-      <Header />
-      <Content>
-        <MaxWidthLimiter>
-          <BrowserRouter>
-            <Routes>
-              <Route path={routes.home} element={<Home />} />
-              <Route path={routes.item} element={<Items />} />
-              <Route
-                path="*"
-                element={<ErrorAlert description="Page not found!" />}
-              />
-            </Routes>
-          </BrowserRouter>
-        </MaxWidthLimiter>
-      </Content>
-    </Layout>
+    <CartProvider>
+      <Layout style={{ minHeight: "100vh" }}>
+        <BrowserRouter>
+          <Header />
+          <div style={{ height: 64 }} />
+          <Content>
+            <MaxWidthLimiter>
+              <Routes>
+                <Route path={routes.home} element={<Home />} />
+                <Route path={routes.cart} element={<Cart />} />
+                <Route path={routes.item} element={<Items />} />
+                <Route
+                  path="*"
+                  element={<ErrorAlert description="Page not found!" />}
+                />
+              </Routes>
+            </MaxWidthLimiter>
+          </Content>
+        </BrowserRouter>
+      </Layout>
+    </CartProvider>
   );
 }
 

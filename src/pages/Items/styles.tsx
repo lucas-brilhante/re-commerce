@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 export const ItemsContainer = styled(Row)`
   justify-content: center;
+
+  .ant-card-head-title{
+    white-space: normal;
+  }
 `;
 
 export const ImgContainer = styled.div`

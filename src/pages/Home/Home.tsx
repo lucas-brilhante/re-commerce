@@ -24,7 +24,7 @@ export const Home = () => {
         const path = generatePath(routes.item, { itemId: item.id });
         return (
           <Link to={path} key={item.id}>
-            <ItemCard item={item} />;
+            <ItemCard item={item} />
           </Link>
         );
       })}

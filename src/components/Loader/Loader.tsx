@@ -6,7 +6,7 @@ export const Loader = () => {
     <SpinnerContainer>
       <Space align="center" direction="vertical">
         <Spin size="large" />
-        <Typography.Text type="secondary">Carregando...</Typography.Text>
+        <Typography.Text type="secondary">Loading...</Typography.Text>
       </Space>
     </SpinnerContainer>
   );
