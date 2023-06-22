@@ -2,6 +2,8 @@
 
 Project created using a public api with the goal of simulating an E-commerce.
 
+
+Deploy: https://lucas-brilhante-recommerce.netlify.app
 Api: https://fakestoreapi.com 
 
 ## Scripts for running locally
