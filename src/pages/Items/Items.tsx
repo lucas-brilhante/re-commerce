@@ -37,7 +37,7 @@ export const Items = () => {
       await addItemToCard({ itemId: Number(itemId), quantity: 1 });
       notification.success({
         message: "Success",
-        description: "Item removed successfully",
+        description: "Item added successfully",
       });
       navigate(routes.cart);
     } catch (error) {
