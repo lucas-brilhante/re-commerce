@@ -4,6 +4,9 @@ import { api } from "../../services";
 import { CartResponse } from "../useCart/types";
 import { Cart } from "./types";
 
+// The Api doesn't give us the information of items inside the cart,
+// so this hook is a workaround to pick that using extra request
+
 export const useDetailedCart = (data?: CartResponse) => {
   const [cart, setCart] = useState<Cart>();
   const [isLoading, setIsloading] = useState(true);

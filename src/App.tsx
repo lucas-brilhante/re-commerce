@@ -1,4 +1,4 @@
-import { Layout } from "antd";
+import { Alert, Layout } from "antd";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Content } from "./components/Content";
 import { Header } from "./components/Header";
@@ -19,6 +19,15 @@ function App() {
           <Header />
           <div style={{ height: 64 }} />
           <Content>
+            <MaxWidthLimiter>
+              <Alert
+                style={{ margin: "16px 0", width: "100%" }}
+                message="Attention"
+                description="This app uses the public api: https://fakestoreapi.com/ and all adding, updating and removing actions don't change the database. The use of api is just to simulate a integration with a real api."
+                type="warning"
+                closable
+              />
+            </MaxWidthLimiter>
             <MaxWidthLimiter>
               <Routes>
                 <Route path={routes.home} element={<Home />} />
